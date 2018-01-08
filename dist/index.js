@@ -13,7 +13,7 @@ function getIconName(file) {
 
   // must before first
   if (name === 'circle.yml') {
-    return 'circle'
+    return 'circleci'
   }
 
   if (name === '.eslintignore' || name.startsWith('.eslintrc')) {
@@ -262,7 +262,7 @@ function getCSS(files) {
 
 module.exports = {
   imports: {
-    DIRECTORY_STYLE: 'file-directory',
+    DIRECTORY_STYLE: 'directory',
     getIconName: getIconName,
     getCSS: getCSS,
     prettyBytes: prettyBytes
