@@ -1,6 +1,6 @@
 {
   "name": "serve-directory-theme-city-lights",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "city lights theme for serve-directory.",
   "main": "index.js",
   "repository": {
@@ -27,8 +27,8 @@
     "pretty-bytes": "^4.0.2"
   },
   "devDependencies": {
-    "city-lights-icons": "Yummygum/city-lights-icons-atom",
     "btoa": "^1.1.2",
+    "city-lights-icons": "Yummygum/city-lights-icons-atom",
     "node-sass": "^4.7.2"
   },
   "scripts": {
