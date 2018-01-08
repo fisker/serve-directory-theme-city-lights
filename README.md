@@ -6,7 +6,7 @@
 
 ### mobile device
 
-![mobile device](https://github.com/fisker/serve-directory-theme-city-lights/blob/master/screenshots/desktop.png?raw=true)
+![mobile device](https://github.com/fisker/serve-directory-theme-city-lights/blob/master/screenshots/mobile.jpg?raw=true)
 
 ### desktop
 
