@@ -1,17 +1,21 @@
-$color-border: #eaecef;
-$color-base: #24292e;
+$color-border: #383b44;
+$color-base: #a0b3c6;
 $color-muted: #6a737d;
-$color-hover: #f6f8fa;
-$color-link: #0366d6;
+$color-hover: #1d252c;
+$color-link: #b8bfce;
 $color-striped: #f2f2f2;
 
 body {
-  background: #fff;
+  background-color:#28313a;
   color: $color-base;
   line-height: 1.5;
   font-size: 14px;
   word-break: break-all;
   word-wrap: break-word;
+}
+
+h1 {
+  color: #33ced8;
 }
 
 // .seperator {

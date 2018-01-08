@@ -54,8 +54,5 @@ citylightsIcons
     )
   })
 
-asserts.icons.default =
-  '.file__icon_default{background-image:url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDEyIDE2IiBjbGFzcz0iIiBhcmlhLWhpZGRlbj0idHJ1ZSIgZmlsbD0iIzZhNzM3ZCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik02IDVIMlY0aDR2MXpNMiA4aDdWN0gydjF6bTAgMmg3VjlIMnYxem0wIDJoN3YtMUgydjF6bTEwLTcuNVYxNGMwIC41NS0uNDUgMS0xIDFIMWMtLjU1IDAtMS0uNDUtMS0xVjJjMC0uNTUuNDUtMSAxLTFoNy41TDEyIDQuNXpNMTEgNUw4IDJIMXYxMmgxMFY1eiIvPjwvc3ZnPg==)}'
-
 fs.writeFileSync('../dist/asserts.json', JSON.stringify(asserts))
 fs.writeFileSync('../dist/index.js', fs.readFileSync('../src/index.js'))
