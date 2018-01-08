@@ -1,0 +1,52 @@
+{
+  "name": "serve-directory-theme-city-lights",
+  "version": "1.0.0",
+  "description": "city lights theme for serve-directory.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fisker/serve-directory-theme-city-lights.git"
+  },
+  "keywords": [
+    "serve-directory",
+    "theme",
+    "octicons",
+    "serve-directory-theme"
+  ],
+  "author": {
+    "name": "fisker Cheung",
+    "email": "lionkay@gmail.com",
+    "url": "https://github.com/fisker"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fisker/serve-directory-theme-city-lights/issues"
+  },
+  "dependencies": {
+    "lodash.uniq": "^4.5.0",
+    "pretty-bytes": "^4.0.2"
+  },
+  "devDependencies": {
+    "city-lights-icons": "Yummygum/city-lights-icons-atom",
+    "btoa": "^1.1.2",
+    "node-sass": "^4.7.2"
+  },
+  "scripts": {
+    "build": "cd scripts && sh build.sh",
+    "update-dependencies": "yarn upgrade-interactive --latest",
+    "publish-npm": "npm --registry=https://registry.npmjs.org/ publish",
+    "release": "npm rum build && np"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "readmeFilename": "README.md",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "package.json",
+    "dist/index.js",
+    "dist/asserts.json"
+  ]
+}
