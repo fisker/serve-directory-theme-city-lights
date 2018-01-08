@@ -6,8 +6,8 @@
 
 ### mobile device
 
-![mobile device](https://github.com/fisker/serve-directory-theme-city-lights/tree/master/screenshots/mobile.jpg?raw=true)
+![mobile device](https://github.com/fisker/serve-directory-theme-city-lights/blob/master/screenshots/desktop.png?raw=true)
 
 ### desktop
 
-![desktop](https://github.com/fisker/serve-directory-theme-city-lights/tree/master/screenshots/desktop.png?raw=true)
+![desktop](https://github.com/fisker/serve-directory-theme-city-lights/blob/master/screenshots/desktop.png?raw=true)
