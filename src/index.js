@@ -211,18 +211,6 @@ function getIconName(file) {
     return 'sketchplugin'
   }
 
-  if (/^image\/*/.test(type)) {
-    return 'image'
-  }
-
-  if (/^video\/*/.test(type)) {
-    return 'video'
-  }
-
-  if (/^audio\/*/.test(type)) {
-    return 'audio'
-  }
-
   if (
     [
       'css',
@@ -242,6 +230,18 @@ function getIconName(file) {
     ].includes(ext)
   ) {
     return ext
+  }
+
+  if (/^image\/*/.test(type)) {
+    return 'image'
+  }
+
+  if (/^video\/*/.test(type)) {
+    return 'video'
+  }
+
+  if (/^audio\/*/.test(type)) {
+    return 'audio'
   }
 
   return 'default'
