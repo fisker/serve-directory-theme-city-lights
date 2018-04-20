@@ -1,15 +1,20 @@
-var fs = require('fs')
-var nodeSass = require('node-sass')
-var CITYLIGHTS_ICONS_DIR = '../node_modules/city-lights-icons/icons/'
+const CHARSET = 'utf-8'
+const CITYLIGHTS_ICONS_DIR = '../node_modules/city-lights-icons/icons/'
 
-var btoa = global.btoa || require('btoa')
+const fs = require('fs')
+const nodeSass = require('node-sass')
+const babel = require('babel-core')
+const prettier = require('prettier')
+const babelConfig = JSON.parse(fs.readFileSync('../.babelrc', CHARSET))
 
-var iconMap = {
+const btoa = global.btoa || require('btoa')
+
+const iconMap = {
   folder: 'directory',
   ds_store: 'ds-store'
 }
 
-var baseStyle = nodeSass
+const baseStyle = nodeSass
   .renderSync({
     file: '../src/style.scss',
     outputStyle: 'compressed'
@@ -17,28 +22,24 @@ var baseStyle = nodeSass
   .css.toString()
   .trim()
 
-var template = fs
-  .readFileSync('../src/directory.html', 'utf-8')
+const template = fs
+  .readFileSync('../src/directory.ejs', CHARSET)
   .replace(/>\s*</g, '><')
 
-var asserts = {
+const asserts = {
   css: baseStyle,
   template: template,
   icons: {}
 }
 
 function getIcon(name) {
-  var className = iconMap[name] || name
   var file = name + '-icon-active.svg'
-  var svg = fs.readFileSync(CITYLIGHTS_ICONS_DIR + file, 'utf-8')
+  var svg = fs.readFileSync(CITYLIGHTS_ICONS_DIR + file, CHARSET)
   // .replace('<svg', '<svg fill="#6a737d"')
   // ie can't recognize
   // var img = 'url(data:image/svg+xml;utf8,' + encodeURIComponent(svg)
   var img = 'data:image/svg+xml;base64,' + btoa(svg)
-  var css = '.file__icon_' + className + '{background-image:url(' + img + ')}'
-  return {
-    [className]: css
-  }
+  return img
 }
 
 var citylightsIcons = fs.readdirSync(CITYLIGHTS_ICONS_DIR)
@@ -48,11 +49,20 @@ citylightsIcons
     return /\-icon\-active\.svg$/.test(icon)
   })
   .forEach(function(icon) {
-    Object.assign(
-      asserts.icons,
-      getIcon(icon.match(/^(^.*?)\-icon\-active\.svg$/)[1])
-    )
+    icon = icon.match(/^(^.*?)\-icon\-active\.svg$/)[1]
+    asserts.icons[iconMap[icon] || icon] = getIcon(icon)
   })
 
-fs.writeFileSync('../dist/asserts.json', JSON.stringify(asserts))
-fs.writeFileSync('../dist/index.js', fs.readFileSync('../src/index.js'))
+fs.writeFileSync('../dist/asserts.json', JSON.stringify(asserts, null, 2))
+fs.writeFileSync(
+  '../dist/index.js',
+  (function() {
+    let code = fs.readFileSync('../src/index.js', CHARSET)
+    code = babel.transform(code, babelConfig).code
+    code = prettier.format(
+      code,
+      prettier.resolveConfig.sync('prettier.config.js')
+    )
+    return code
+  })()
+)
