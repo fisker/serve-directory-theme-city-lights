@@ -5,6 +5,7 @@ const fs = require('fs')
 const nodeSass = require('node-sass')
 const babel = require('babel-core')
 const prettier = require('prettier')
+const stringify = require('json-stable-stringify')
 const babelConfig = JSON.parse(fs.readFileSync('../.babelrc', CHARSET))
 
 const btoa = global.btoa || require('btoa')
@@ -53,7 +54,7 @@ citylightsIcons
     asserts.icons[iconMap[icon] || icon] = getIcon(icon)
   })
 
-fs.writeFileSync('../dist/asserts.json', JSON.stringify(asserts, null, 2))
+fs.writeFileSync('../dist/asserts.json', stringify(asserts, {space: 2}))
 fs.writeFileSync(
   '../dist/index.js',
   (function() {

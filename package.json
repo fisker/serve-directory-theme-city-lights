@@ -23,6 +23,7 @@
     "url": "https://github.com/fisker/serve-directory-theme-city-lights/issues"
   },
   "dependencies": {
+    "json-stable-stringify": "^1.0.1",
     "lodash.uniq": "^4.5.0",
     "pretty-bytes": "^4.0.2"
   },
