@@ -23,7 +23,6 @@
     "url": "https://github.com/fisker/serve-directory-theme-city-lights/issues"
   },
   "dependencies": {
-    "json-stable-stringify": "^1.0.1",
     "lodash.uniq": "^4.5.0",
     "pretty-bytes": "^4.0.2"
   },
@@ -33,6 +32,7 @@
     "babel-preset-env": "^1.6.1",
     "btoa": "^1.2.1",
     "city-lights-icons": "Yummygum/city-lights-icons-atom",
+    "json-stable-stringify": "^1.0.1",
     "node-sass": "^4.8.3",
     "prettier": "^1.12.1"
   },
