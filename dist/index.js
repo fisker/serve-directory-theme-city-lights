@@ -3,9 +3,22 @@
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-var prettyBytes = require('pretty-bytes')
-var uniq = require('lodash.uniq')
-var asserts = require('./asserts.json')
+
+var _prettyBytes = require('pretty-bytes')
+
+var _prettyBytes2 = _interopRequireDefault(_prettyBytes)
+
+var _lodash = require('lodash.uniq')
+
+var _lodash2 = _interopRequireDefault(_lodash)
+
+var _asserts = require('./asserts.json')
+
+var _asserts2 = _interopRequireDefault(_asserts)
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {default: obj}
+}
 
 function getIconName(file) {
   if (file.isDirectory()) {
@@ -254,14 +267,18 @@ function getIconName(file) {
 
 function iconToCSS(icon) {
   return (
-    '.file-icon_' + icon + '{background-image:url(' + asserts.icons[icon] + ')}'
+    '.file-icon_type_' +
+    icon +
+    '{background-image:url(' +
+    _asserts2.default.icons[icon] +
+    ')}'
   )
 }
 
 function getCSS(files) {
   var style = ''
-  style += asserts.css
-  style += uniq(files.map(getIconName))
+  style += _asserts2.default.css
+  style += (0, _lodash2.default)(files.map(getIconName))
     .map(iconToCSS)
     .join('')
 
@@ -270,15 +287,14 @@ function getCSS(files) {
 
 exports.default = {
   imports: {
-    DIRECTORY_STYLE: 'directory',
     getIconName: getIconName,
     getCSS: getCSS,
-    prettyBytes: prettyBytes
+    prettyBytes: _prettyBytes2.default
   },
   process: [
     {
       accept: 'text/html',
-      render: asserts.template
+      render: _asserts2.default.template
     }
   ]
 }

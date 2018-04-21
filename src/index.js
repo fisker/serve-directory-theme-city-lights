@@ -1,6 +1,8 @@
-const prettyBytes = require('pretty-bytes')
-const uniq = require('lodash.uniq')
-const asserts = require('./asserts.json')
+'use strict'
+
+import prettyBytes from 'pretty-bytes'
+import uniq from 'lodash.uniq'
+import asserts from './asserts.json'
 
 function getIconName(file) {
   if (file.isDirectory()) {
@@ -248,7 +250,7 @@ function getIconName(file) {
 }
 
 function iconToCSS(icon) {
-  return `.file-icon_${icon}{background-image:url(${asserts.icons[icon]})}`
+  return `.file-icon_type_${icon}{background-image:url(${asserts.icons[icon]})}`
 }
 
 function getCSS(files) {
@@ -263,7 +265,6 @@ function getCSS(files) {
 
 export default {
   imports: {
-    DIRECTORY_STYLE: 'directory',
     getIconName: getIconName,
     getCSS: getCSS,
     prettyBytes: prettyBytes
