@@ -24,17 +24,17 @@
   },
   "dependencies": {
     "lodash.uniq": "^4.5.0",
-    "pretty-bytes": "^4.0.2"
+    "pretty-bytes": "^5.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "btoa": "^1.2.1",
     "city-lights-icons": "Yummygum/city-lights-icons-atom",
     "json-stable-stringify": "^1.0.1",
-    "node-sass": "^4.8.3",
-    "prettier": "^1.12.1"
+    "node-sass": "^4.9.0",
+    "prettier": "^1.13.4"
   },
   "scripts": {
     "build": "cd scripts && sh build.sh",

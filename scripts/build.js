@@ -62,7 +62,7 @@ fs.writeFileSync(
     code = babel.transform(code, babelConfig).code
     code = prettier.format(
       code,
-      prettier.resolveConfig.sync('prettier.config.js')
+      prettier.resolveConfig.sync('../dist/index.js')
     )
     return code
   })()
