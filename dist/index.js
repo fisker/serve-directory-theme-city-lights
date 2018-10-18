@@ -3,18 +3,13 @@
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
+exports.default = void 0
 
-var _prettyBytes = require('pretty-bytes')
+var _prettyBytes = _interopRequireDefault(require('pretty-bytes'))
 
-var _prettyBytes2 = _interopRequireDefault(_prettyBytes)
+var _lodash = _interopRequireDefault(require('lodash.uniq'))
 
-var _lodash = require('lodash.uniq')
-
-var _lodash2 = _interopRequireDefault(_lodash)
-
-var _asserts = require('./asserts.json')
-
-var _asserts2 = _interopRequireDefault(_asserts)
+var _asserts = _interopRequireDefault(require('./asserts.json'))
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {default: obj}
@@ -27,9 +22,8 @@ function getIconName(file) {
 
   var name = file.name
   var ext = file.ext.slice(1)
-  var type = file.type
+  var type = file.type // must before first
 
-  // must before first
   if (name === 'circle.yml') {
     return 'circleci'
   }
@@ -57,9 +51,7 @@ function getIconName(file) {
 
   if (name.startsWith('Gulpfile') || name.startsWith('gulpfile')) {
     return 'gulp'
-  }
-
-  //
+  } //
 
   if (ext === 'yml' || ext === 'yaml') {
     return 'yaml'
@@ -266,36 +258,32 @@ function getIconName(file) {
 }
 
 function iconToCSS(icon) {
-  return (
-    '.file-icon_type_' +
-    icon +
-    '{background-image:url(' +
-    _asserts2.default.icons[icon] +
-    ')}'
-  )
+  return '.file-icon_type_'
+    .concat(icon, '{background-image:url(')
+    .concat(_asserts.default.icons[icon], ')}')
 }
 
 function getCSS(files) {
   var style = ''
-  style += _asserts2.default.css
-  style += (0, _lodash2.default)(files.map(getIconName))
+  style += _asserts.default.css
+  style += (0, _lodash.default)(files.map(getIconName))
     .map(iconToCSS)
     .join('')
-
-  return '<style>' + style + '</style>'
+  return '<style>'.concat(style, '</style>')
 }
 
-exports.default = {
+var _default = {
   imports: {
     getIconName: getIconName,
     getCSS: getCSS,
-    prettyBytes: _prettyBytes2.default
+    prettyBytes: _prettyBytes.default
   },
   process: [
     {
       accept: 'text/html',
-      render: _asserts2.default.template
+      render: _asserts.default.template
     }
   ]
 }
-module.exports = exports['default']
+exports.default = _default
+module.exports = exports.default
