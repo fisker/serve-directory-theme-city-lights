@@ -1,6 +1,6 @@
 {
   "name": "serve-directory-theme-city-lights",
-  "version": "1.2.0",
+  "version": "1.1.5",
   "description": "city lights theme for serve-directory.",
   "main": "index.js",
   "repository": {
@@ -41,7 +41,7 @@
     "build": "cd scripts && sh build.sh",
     "update-dependencies": "yarn upgrade-interactive --latest",
     "publish-npm": "npm --registry=https://registry.npmjs.org/ publish",
-    "release": "npm rum build && np"
+    "release": "npm rum build && np --yolo --no-yarn"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -52,7 +52,7 @@
     "README.md",
     "index.js",
     "package.json",
-    "dist/index.js",
-    "dist/asserts.json"
+    "lib/index.js",
+    "lib/asserts.json"
   ]
 }

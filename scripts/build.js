@@ -68,15 +68,15 @@ function getIcons() {
 }
 
 getIcons().then(() => {
-  fs.writeFileSync('../dist/asserts.json', stringify(asserts, {space: 2}))
+  fs.writeFileSync('../lib/asserts.json', stringify(asserts, {space: 2}))
   fs.writeFileSync(
-    '../dist/index.js',
+    '../lib/index.js',
     (() => {
       let code = fs.readFileSync('../src/index.js', CHARSET)
       code = babel.transform(code, babelConfig).code
       code = prettier.format(
         code,
-        prettier.resolveConfig.sync('../dist/index.js')
+        prettier.resolveConfig.sync('../lib/index.js')
       )
       return code
     })()
