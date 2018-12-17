@@ -1,5 +1,7 @@
 # serve-directory-theme-city-lights
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fisker/serve-directory-theme-city-lights.svg)](https://greenkeeper.io/)
+
 > city lights theme for serve-directory.
 
 ## screenshots
