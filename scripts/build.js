@@ -14,13 +14,13 @@ const svgo = new SVGO()
 
 const iconMap = {
   folder: 'directory',
-  ds_store: 'ds-store'
+  ds_store: 'ds-store',
 }
 
 const baseStyle = nodeSass
   .renderSync({
     file: '../src/style.scss',
-    outputStyle: 'compressed'
+    outputStyle: 'compressed',
   })
   .css.toString()
   .trim()
@@ -31,8 +31,8 @@ const template = fs
 
 const asserts = {
   css: baseStyle,
-  template: template,
-  icons: {}
+  template,
+  icons: {},
 }
 
 function getIcon(icon) {
@@ -40,23 +40,27 @@ function getIcon(icon) {
 
   return svgo.optimize(svg).then(function(result) {
     let uri = svgToMiniDataURI(result.data)
-    uri = uri.replace('data:image/svg+xml,', 'data:image/svg+xml;charset=utf-8,')
+    uri = uri.replace(
+      'data:image/svg+xml,',
+      'data:image/svg+xml;charset=utf-8,'
+    )
     return {
       ...icon,
-      uri
+      uri,
     }
   })
 }
 
 function getIcons() {
-  const citylightsIcons = fs.readdirSync(CITYLIGHTS_ICONS_DIR)
+  const citylightsIcons = fs
+    .readdirSync(CITYLIGHTS_ICONS_DIR)
     .filter(fileName => /-icon-active\.svg$/.test(fileName))
     .map(fileName => {
       let name = fileName.match(/^(^.*?)-icon-active\.svg$/)[1]
       name = iconMap[name] || name
       return {
-        name: name,
-        file: CITYLIGHTS_ICONS_DIR + fileName
+        name,
+        file: CITYLIGHTS_ICONS_DIR + fileName,
       }
     })
 
@@ -82,4 +86,3 @@ getIcons().then(() => {
     })()
   )
 })
-
