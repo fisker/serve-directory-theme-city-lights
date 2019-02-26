@@ -3320,10 +3320,10 @@ markdown-it@8.4.2:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-markdownlint-cli@^0.14.0:
+markdownlint-cli@0.14.0:
   version "0.14.0"
-  resolved "http://registry.npm.taobao.org/markdownlint-cli/download/markdownlint-cli-0.14.0.tgz#6cd6f365ca8d3b66be345ae05eb5e5ac8c1c83fe"
-  integrity sha1-bNbzZcqNO2a+NFrgXrXlrIwcg/4=
+  resolved "https://registry.yarnpkg.com/markdownlint-cli/-/markdownlint-cli-0.14.0.tgz#6cd6f365ca8d3b66be345ae05eb5e5ac8c1c83fe"
+  integrity sha512-EE2YBEgw7W38eCXeOA79I2pv33Rr5hLAkRqZtXJtEbTHKMQtVaVGLD2Qb4RDekYXgXyuR+LRXFE947WlxOvLXQ==
   dependencies:
     commander "~2.9.0"
     deep-extend "~0.5.1"
