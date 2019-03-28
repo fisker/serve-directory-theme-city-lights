@@ -1,6 +1,6 @@
 {
   "name": "serve-directory-theme-city-lights",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "city lights theme for serve-directory.",
   "main": "index.js",
   "repository": {
