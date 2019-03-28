@@ -51,7 +51,7 @@ function getIconName(file) {
     return 'html'
   }
 
-  if (ext === 'es' || ext === 'es6' || ext === 'js') {
+  if (ext === 'es' || ext === 'es6' || ext === 'js' || ext === 'mjs') {
     return 'js'
   }
 
