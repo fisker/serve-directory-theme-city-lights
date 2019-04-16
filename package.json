@@ -27,7 +27,7 @@
     "@commitlint/cli": "7.5.2",
     "@commitlint/config-conventional": "7.5.0",
     "@xwtec/eslint-config": "5.0.4",
-    "babel-plugin-add-module-exports": "1.0.0",
+    "babel-plugin-add-module-exports": "1.0.1",
     "city-lights-icons": "github:Yummygum/city-lights-icons-atom",
     "cz-conventional-changelog-emoji": "0.1.0",
     "eslint": "5.16.0",
