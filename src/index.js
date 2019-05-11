@@ -8,7 +8,7 @@ function getIconName(file) {
   }
 
   const {name} = file
-  const ext = file.ext.slice(1)
+  const extension = file.ext.slice(1)
   const {type} = file
 
   // must before first
@@ -43,23 +43,28 @@ function getIconName(file) {
 
   //
 
-  if (ext === 'yml' || ext === 'yaml') {
+  if (extension === 'yml' || extension === 'yaml') {
     return 'yaml'
   }
 
-  if (ext === 'htm' || ext === 'html') {
+  if (extension === 'htm' || extension === 'html') {
     return 'html'
   }
 
-  if (ext === 'es' || ext === 'es6' || ext === 'js' || ext === 'mjs') {
+  if (
+    extension === 'es' ||
+    extension === 'es6' ||
+    extension === 'js' ||
+    extension === 'mjs'
+  ) {
     return 'js'
   }
 
-  if (ext === 'clj' || ext === 'cljs') {
+  if (extension === 'clj' || extension === 'cljs') {
     return 'clojure'
   }
 
-  if (ext === 'json' || ext === 'json5') {
+  if (extension === 'json' || extension === 'json5') {
     return 'json'
   }
 
@@ -77,35 +82,40 @@ function getIconName(file) {
     return 'ds-store'
   }
 
-  if (ext === 'cs') {
+  if (extension === 'cs') {
     return 'csharp'
   }
 
-  if (ext === 'py' || name === 'requirements.txt') {
+  if (extension === 'py' || name === 'requirements.txt') {
     return 'python'
   }
 
-  if (ext === 'sass' || ext === 'scss') {
+  if (extension === 'sass' || extension === 'scss') {
     return 'sass'
   }
 
   if (
-    ext === 'markdown' ||
-    ext === 'mdown' ||
-    ext === 'mkd' ||
-    ext === 'mkdown' ||
-    ext === 'md'
+    extension === 'markdown' ||
+    extension === 'mdown' ||
+    extension === 'mkd' ||
+    extension === 'mkdown' ||
+    extension === 'md'
   ) {
     return 'markdown'
   }
 
-  if (ext === 'eot' || ext === 'ttf' || ext === 'woff' || ext === 'woff2') {
+  if (
+    extension === 'eot' ||
+    extension === 'ttf' ||
+    extension === 'woff' ||
+    extension === 'woff2'
+  ) {
     return 'font'
   }
 
   if (
-    ext === 'rb' ||
-    ext === 'ru' ||
+    extension === 'rb' ||
+    extension === 'ru' ||
     name === 'Appraisals' ||
     name === 'Berksfile' ||
     name === 'Capfile' ||
@@ -127,11 +137,11 @@ function getIconName(file) {
     return 'gemfile'
   }
 
-  if (ext === 'hbs' || ext === 'handlebars') {
+  if (extension === 'hbs' || extension === 'handlebars') {
     return 'handlebars'
   }
 
-  if (ext === 'styl') {
+  if (extension === 'styl') {
     return 'stylus'
   }
 
@@ -139,11 +149,11 @@ function getIconName(file) {
     return 'babel'
   }
 
-  if (ext === 'ts' || ext === 'tsx') {
+  if (extension === 'ts' || extension === 'tsx') {
     return 'typescript'
   }
 
-  if (ext === 'cjsx' || ext === 'coffee' || ext === 'cson') {
+  if (extension === 'cjsx' || extension === 'coffee' || extension === 'cson') {
     return 'coffeescript'
   }
 
@@ -151,15 +161,15 @@ function getIconName(file) {
     return 'docker'
   }
 
-  if (ext === 'java' || ext === 'jar') {
+  if (extension === 'java' || extension === 'jar') {
     return 'java'
   }
 
-  if (ext === 'sh') {
+  if (extension === 'sh') {
     return 'bash'
   }
 
-  if (name === '.nodemonignore' || ext === 'nodemon.json') {
+  if (name === '.nodemonignore' || extension === 'nodemon.json') {
     return 'node'
   }
 
@@ -183,23 +193,23 @@ function getIconName(file) {
     return 'bootstrap'
   }
 
-  if (ext === 'hs') {
+  if (extension === 'hs') {
     return 'haskell'
   }
 
-  if (ext === 'xls') {
+  if (extension === 'xls') {
     return 'excel'
   }
 
-  if (ext === 'psd') {
+  if (extension === 'psd') {
     return 'photoshop'
   }
 
-  if (ext === 'ai') {
+  if (extension === 'ai') {
     return 'illustrator'
   }
 
-  if (ext === 'cpp') {
+  if (extension === 'cpp') {
     return 'cplusplus'
   }
 
@@ -207,7 +217,7 @@ function getIconName(file) {
     return 'apache'
   }
 
-  if (ext === 'sketch' || ext === 'cocoascript') {
+  if (extension === 'sketch' || extension === 'cocoascript') {
     return 'sketchplugin'
   }
 
@@ -227,9 +237,9 @@ function getIconName(file) {
       'scala',
       'pug',
       'haml',
-    ].includes(ext)
+    ].includes(extension)
   ) {
-    return ext
+    return extension
   }
 
   if (/^image\/*/.test(type)) {

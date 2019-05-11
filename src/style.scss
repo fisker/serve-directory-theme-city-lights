@@ -15,7 +15,7 @@ $icon-size: ($font-size * $line-height);
 }
 
 body {
-  background-color:#28313a;
+  background-color: #28313a;
   color: $color-base;
   line-height: $line-height;
   font-size: $font-size;
@@ -37,7 +37,7 @@ a {
   color: $color-link;
   text-decoration: none;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
 
   &:hover {
     text-decoration: underline;
