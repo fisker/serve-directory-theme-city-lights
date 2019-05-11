@@ -10,7 +10,7 @@
   "keywords": [
     "serve-directory",
     "theme",
-    "octicons",
+    "city-lights",
     "serve-directory-theme"
   ],
   "author": {
@@ -46,7 +46,6 @@
     "markdownlint-cli": "^0.15.0",
     "mini-svg-data-uri": "1.0.3",
     "node-sass": "4.12.0",
-    "np": "^5.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "1.17.0",
     "stylelint": "^10.0.1",
