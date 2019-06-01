@@ -5662,9 +5662,9 @@ stylelint-config-standard@^18.3.0:
     stylelint-config-recommended "^2.2.0"
 
 stylelint-scss@^3.6.1:
-  version "3.6.1"
-  resolved "https://registry.npm.taobao.org/stylelint-scss/download/stylelint-scss-3.6.1.tgz#eef14df2b6314cbd20d240b72d5b97c40751fef5"
-  integrity sha1-7vFN8rYxTL0g0kC3LVuXxAdR/vU=
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.8.0.tgz#fc372306c2105b461d0c162199e65f0c09fada2a"
+  integrity sha512-J55tNmxXEh/ymhz5BiscIiUcHgPmJ2Nv+0+zgnqTqdQBe1URQbrdjlAyK3xq+7i2nVpWr2wlRj25SjoonZFcHg==
   dependencies:
     lodash "^4.17.11"
     postcss-media-query-parser "^0.2.3"
