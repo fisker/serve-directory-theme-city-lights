@@ -14,7 +14,7 @@ node_modules/**
 **/third-party/**
 
 # build file
-# dist/**
+dist/**
 **/*.min.*
 
 # fixtures
