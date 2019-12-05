@@ -14,8 +14,7 @@ node_modules/**
 **/third-party/**
 
 # build file
-lib/**
-dist/**
+# dist/**
 **/*.min.*
 
 # fixtures
@@ -26,4 +25,3 @@ dist/**
 coverage/**
 
 # project glob
-
