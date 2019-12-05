@@ -20,10 +20,12 @@ const iconMap = {
 
 async function getIcon(icon) {
   const svg = fs.readFileSync(icon.file, CHARSET)
+
   const result = await svgo.optimize(svg)
 
   let uri = svgToMiniDataURI(result.data)
   uri = uri.replace('data:image/svg+xml,', 'data:image/svg+xml;charset=utf-8,')
+
   return {
     ...icon,
     uri,

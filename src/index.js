@@ -1,6 +1,5 @@
 import prettyBytes from 'pretty-bytes'
-// eslint-disable-next-line import/no-unresolved
-import assets from '../.cache/assets'
+import assets from './assets'
 
 function getIconName(file) {
   if (file.isDirectory()) {
