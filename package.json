@@ -12,10 +12,8 @@
   "bugs": {
     "url": "https://github.com/fisker/serve-directory-theme-city-lights/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fisker/serve-directory-theme-city-lights.git"
-  },
+  "repository": "fisker/serve-directory-theme-city-lights",
+  "funding": "https://github.com/fisker/serve-directory-theme-city-lights?sponsor=1",
   "license": "MIT",
   "author": {
     "name": "fisker Cheung",
@@ -95,6 +93,5 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "readmeFilename": "README.md"
+  }
 }
