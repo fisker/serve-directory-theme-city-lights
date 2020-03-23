@@ -35,8 +35,8 @@ async function getIcon(icon) {
 function getIcons() {
   const citylightsIcons = fs
     .readdirSync(CITYLIGHTS_ICONS_DIR)
-    .filter(fileName => /-icon-active\.svg$/.test(fileName))
-    .map(fileName => {
+    .filter((fileName) => /-icon-active\.svg$/.test(fileName))
+    .map((fileName) => {
       let name = fileName.match(/^(^.*?)-icon-active\.svg$/)[1]
       name = iconMap[name] || name
       return {
