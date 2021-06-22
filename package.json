@@ -87,7 +87,7 @@
     "rollup": "2.52.2",
     "sort-package-json": "1.50.0",
     "stylelint": "13.13.1",
-    "svgo": "1.3.2",
+    "svgo": "2.3.0",
     "write-prettier-file": "1.2.6"
   },
   "publishConfig": {
