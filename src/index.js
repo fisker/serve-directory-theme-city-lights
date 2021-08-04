@@ -1,5 +1,5 @@
 import prettyBytes from 'pretty-bytes'
-import assets from './assets'
+import assets from './assets.js'
 
 function getIconName(file) {
   if (file.isDirectory()) {
@@ -261,7 +261,9 @@ function iconToCSS(icon) {
 }
 
 function getCSS(files) {
-  const iconStyle = [...new Set(files.map(getIconName))].map(iconToCSS).join('')
+  const iconStyle = [...new Set(files.map((file) => getIconName(file)))]
+    .map((icon) => iconToCSS(icon))
+    .join('')
 
   return `<style>${assets.css}${iconStyle}</style>`
 }

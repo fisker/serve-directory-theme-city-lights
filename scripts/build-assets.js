@@ -1,17 +1,18 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 import sass from 'sass'
 import writePrettierFile from 'write-prettier-file'
-import SVGO from 'svgo'
+import * as svgo from 'svgo'
 import svgToMiniDataURI from 'mini-svg-data-uri'
+import createEsmUtils from 'esm-utils'
+
+const {__dirname} = createEsmUtils(import.meta)
 
 const CHARSET = 'utf-8'
 const CITYLIGHTS_ICONS_DIR = path.join(
   __dirname,
   '../node_modules/city-lights-icons/icons/'
 )
-
-const svgo = new SVGO()
 
 const iconMap = {
   folder: 'directory',
@@ -45,7 +46,7 @@ function getIcons() {
       }
     })
 
-  return Promise.all(citylightsIcons.map(getIcon))
+  return Promise.all(citylightsIcons.map((icon) => getIcon(icon)))
 }
 
 ;(async () => {
@@ -61,7 +62,6 @@ function getIcons() {
     .readFileSync(path.join(__dirname, '../src/directory.ejs'), CHARSET)
     .replace(/>\s*</g, '><')
 
-  // eslint-disable-next-line node/no-unsupported-features/es-builtins
   const icons = Object.fromEntries(
     (await getIcons())
       .map(({name, uri}) => [name, uri])
