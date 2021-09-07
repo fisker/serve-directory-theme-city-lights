@@ -11,7 +11,7 @@ const {__dirname} = createEsmUtils(import.meta)
 const CHARSET = 'utf-8'
 const CITYLIGHTS_ICONS_DIR = path.join(
   __dirname,
-  '../node_modules/city-lights-icons/icons/'
+  '../node_modules/city-lights-icons/icons/',
 )
 
 const iconMap = {
@@ -65,7 +65,7 @@ function getIcons() {
   const icons = Object.fromEntries(
     (await getIcons())
       .map(({name, uri}) => [name, uri])
-      .sort(([name1], [name2]) => name1.localeCompare(name2))
+      .sort(([name1], [name2]) => name1.localeCompare(name2)),
   )
 
   await writePrettierFile(
@@ -74,6 +74,6 @@ function getIcons() {
       css,
       template,
       icons,
-    })}`
+    })}`,
   )
 })()
