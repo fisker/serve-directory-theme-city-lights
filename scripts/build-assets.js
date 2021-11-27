@@ -61,9 +61,11 @@ function getIcons() {
   const template = fs
     .readFileSync(path.join(__dirname, '../src/directory.ejs'), CHARSET)
     .replace(/>\s*</g, '><')
+  
+  let icons = await getIcons()
 
-  const icons = Object.fromEntries(
-    (await getIcons())
+  icons = Object.fromEntries(
+    icons
       .map(({name, uri}) => [name, uri])
       .sort(([name1], [name2]) => name1.localeCompare(name2)),
   )
