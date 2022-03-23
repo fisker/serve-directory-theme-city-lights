@@ -8,7 +8,7 @@ import createEsmUtils from 'esm-utils'
 
 const {__dirname} = createEsmUtils(import.meta)
 
-const CHARSET = 'utf-8'
+const CHARSET = 'utf8'
 const CITYLIGHTS_ICONS_DIR = path.join(
   __dirname,
   '../node_modules/city-lights-icons/icons/',
